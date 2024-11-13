@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa573ba2-2019-47f3-9f80-c7478318730d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/13_Album.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/telran/album/dao/Album.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/telran/album/dao/AlbumImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/telran/album/model/Photo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/telran/album/test/AlbumTest.java" afterDir="false" />
+    <list default="true" id="aa573ba2-2019-47f3-9f80-c7478318730d" name="Changes" comment="First commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/telran/album/dao/AlbumImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/telran/album/dao/AlbumImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/telran/album/test/AlbumTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/telran/album/test/AlbumTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +24,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -53,7 +51,8 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "create.test.in.the.same.root": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/edward/Homeworks/13_Album"
+    "last_opened_file_path": "/home/edward/Java/Courses/Java57/company",
+    "settings.editor.selected.configurable": "Shelf.Project.Settings"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -95,6 +94,30 @@
       <option name="presentableId" value="Default" />
       <updated>1731255453662</updated>
     </task>
+    <task id="LOCAL-00001" summary="First commit">
+      <option name="closed" value="true" />
+      <created>1731516576000</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731516576000</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
   </component>
 </project>

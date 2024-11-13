@@ -6,6 +6,7 @@ import telran.album.model.Photo;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -26,10 +27,10 @@ class AlbumTest {
         album = new AlbumImpl(capacity);
         photos = new Photo[capacity];
         photos[0] = new Photo(1, 1, "Title1", "url1", now.minusDays(7));
-        photos[1] = new Photo(1, 2, "Title2", "url2", now.minusDays(6));
-        photos[2] = new Photo(1, 3, "Title3", "url3", now.minusDays(5));
-        photos[3] = new Photo(2, 1, "Title1", "url1", now.minusDays(4));
-        photos[4] = new Photo(2, 4, "Title4", "url4", now.minusDays(3));
+        photos[1] = new Photo(1, 2, "Title2", "url2", LocalDate.now().minusDays(5).atStartOfDay());
+        photos[2] = new Photo(1, 3, "Title3", "url3", LocalDate.now().minusDays(5).atStartOfDay());
+        photos[3] = new Photo(2, 1, "Title1", "url1", LocalDate.now().minusDays(5).atStartOfDay());
+        photos[4] = new Photo(2, 4, "Title4", "url4", LocalDate.now().minusDays(5).atStartOfDay());
         photos[5] = new Photo(1, 4, "Title4", "url4", now.minusDays(2));
         for (int i = 0; i < photos.length - 1; i++) {
             album.addPhoto(photos[i]);
@@ -76,9 +77,9 @@ class AlbumTest {
     @org.junit.jupiter.api.Test
     void testGetPhotoBetweenDate() {
         LocalDate localDate = LocalDate.now();
-        Photo[] actual = album.getPhotoBetweenDate(localDate.minusDays(6), localDate.minusDays(3));
+        Photo[] actual = album.getPhotoBetweenDate(localDate.minusDays(5), localDate.minusDays(2));
         Arrays.sort(actual, comparator);
-        Photo[] expected = { photos[1], photos[2], photos[3] };
+        Photo[] expected = {photos[1], photos[2], photos[3], photos[4]};
         assertArrayEquals(expected, actual);
     }
 

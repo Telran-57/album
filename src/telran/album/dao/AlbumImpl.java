@@ -4,11 +4,16 @@ import telran.album.model.Photo;
 
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.function.Predicate;
 
 public class AlbumImpl implements Album {
     private Photo[] photos;
     private int size;
+    private Comparator<Photo> comparator = (p1, p2) -> {
+        int res = p1.getDate().compareTo(p2.getDate());
+        return res != 0 ? res : Integer.compare(p1.getPhotoId(), p2.getPhotoId());
+    };
 
     public AlbumImpl(int capacity) {
         photos = new Photo[capacity];
@@ -19,7 +24,11 @@ public class AlbumImpl implements Album {
         if (photo == null || photos.length == size || getPhotoFromAlbum(photo.getPhotoId(), photo.getAlbumId()) != null) {
             return false;
         }
-        photos[size++] = photo;
+        int index = Arrays.binarySearch(photos, 0, size, photo, comparator);
+        index = index >= 0 ? index : -index - 1;
+        System.arraycopy(photos, index, photos, index + 1, size - index);
+        photos[index] = photo;
+        size++;
         return true;
     }
 
@@ -62,8 +71,13 @@ public class AlbumImpl implements Album {
 
     @Override
     public Photo[] getPhotoBetweenDate(LocalDate dateFrom, LocalDate dateTo) {
-        return findPhotosByPredicate(p -> dateFrom.compareTo(p.getDate().toLocalDate()) <= 0
-                && dateTo.compareTo(p.getDate().toLocalDate()) > 0);
+        Photo pattern = new Photo(0, Integer.MIN_VALUE, null, null, dateFrom.atStartOfDay());
+        int from = Arrays.binarySearch(photos, 0, size, pattern, comparator);
+        from = from >= 0 ? from : -from - 1;
+        pattern = new Photo(0, Integer.MIN_VALUE, null, null, dateTo.atStartOfDay());
+        int to = Arrays.binarySearch(photos, 0, size, pattern, comparator);
+        to = to >= 0 ? to : -to - 1;
+        return Arrays.copyOfRange(photos, from, to);
     }
 
     @Override
